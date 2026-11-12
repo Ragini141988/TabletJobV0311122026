@@ -1,0 +1,976 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{07771A89-0F7F-4A47-B14C-A097E902982C}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>TabletJobs.com</RootNamespace>
+    <AssemblyName>TabletJobs.com</AssemblyName>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <UseIISExpress>true</UseIISExpress>
+    <Use64BitIISExpress />
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Buffers, Version=4.0.5.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Buffers.4.6.1\lib\net462\System.Buffers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Memory, Version=4.0.5.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Memory.4.6.3\lib\net462\System.Memory.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Numerics" />
+    <Reference Include="System.Numerics.Vectors, Version=4.1.6.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Numerics.Vectors.4.6.1\lib\net462\System.Numerics.Vectors.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.CompilerServices.Unsafe, Version=6.0.3.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Runtime.CompilerServices.Unsafe.6.1.2\lib\net462\System.Runtime.CompilerServices.Unsafe.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="AspNet.ScriptManager.bootstrap">
+      <HintPath>..\packages\AspNet.ScriptManager.bootstrap.3.3.7\lib\net45\AspNet.ScriptManager.bootstrap.dll</HintPath>
+    </Reference>
+    <Reference Include="AspNet.ScriptManager.jQuery">
+      <HintPath>..\packages\AspNet.ScriptManager.jQuery.3.3.1\lib\net45\AspNet.ScriptManager.jQuery.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ScriptManager.MSAjax">
+      <HintPath>..\packages\Microsoft.AspNet.ScriptManager.MSAjax.5.0.0\lib\net45\Microsoft.ScriptManager.MSAjax.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ScriptManager.WebForms">
+      <HintPath>..\packages\Microsoft.AspNet.ScriptManager.WebForms.5.0.0\lib\net45\Microsoft.ScriptManager.WebForms.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Optimization, Version=1.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35">
+      <HintPath>..\packages\Microsoft.AspNet.Web.Optimization.1.1.3\lib\net40\System.Web.Optimization.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\packages\Newtonsoft.Json.11.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="WebGrease">
+      <Private>True</Private>
+      <HintPath>..\packages\WebGrease.1.6.0\lib\WebGrease.dll</HintPath>
+    </Reference>
+    <Reference Include="Antlr3.Runtime">
+      <Private>True</Private>
+      <HintPath>..\packages\Antlr.3.5.0.2\lib\Antlr3.Runtime.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Web.Optimization.WebForms">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Web.Optimization.WebForms.1.1.3\lib\net45\Microsoft.AspNet.Web.Optimization.WebForms.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.FriendlyUrls">
+      <HintPath>..\packages\Microsoft.AspNet.FriendlyUrls.Core.1.0.2\lib\net45\Microsoft.AspNet.FriendlyUrls.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="About.aspx" />
+    <Content Include="account\accountdashboard.aspx" />
+    <Content Include="account\accountdeliveryedit.aspx" />
+    <Content Include="account\accountexpenses.aspx" />
+    <Content Include="account\accounthome.aspx" />
+    <Content Include="account\AccountLoginPage.aspx" />
+    <Content Include="account\accountreports.aspx" />
+    <Content Include="account\accountrevenue.aspx" />
+    <Content Include="account\accountsaddcustomers.aspx" />
+    <Content Include="account\accountsbooking.aspx" />
+    <Content Include="account\accountslogout.aspx" />
+    <Content Include="account\accountsummary.aspx" />
+    <Content Include="account\ExpensesReport.aspx" />
+    <Content Include="AddGlobalHealthNews.aspx" />
+    <Content Include="CandidateEdit.aspx" />
+    <Content Include="CandidateList.aspx" />
+    <Content Include="CandidateRegistration.aspx" />
+    <Content Include="CandidateRegistrationEditForm.aspx" />
+    <Content Include="CandidateRegistrationForm.aspx" />
+    <Content Include="CandidateRegistrationViewForm.aspx" />
+    <Content Include="CandidateView.aspx" />
+    <Content Include="CaregiverRegistration.aspx" />
+    <Content Include="Contact.aspx" />
+    <Content Include="ContactUs.aspx" />
+    <Content Include="Content\bootstrap-theme.css" />
+    <Content Include="Content\bootstrap-theme.min.css" />
+    <Content Include="Content\bootstrap.css" />
+    <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\Site.css" />
+    <Content Include="Default.aspx" />
+    <Content Include="Disclaimer.aspx" />
+    <Content Include="EditGlobalHealthNews.aspx" />
+    <Content Include="EditInterview.aspx" />
+    <Content Include="favicon.ico" />
+    <Content Include="fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Global.asax" />
+    <Content Include="fonts\glyphicons-halflings-regular.woff2" />
+    <Content Include="fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="Content\bootstrap.min.css.map" />
+    <Content Include="Content\bootstrap.css.map" />
+    <Content Include="Content\bootstrap-theme.min.css.map" />
+    <Content Include="Content\bootstrap-theme.css.map" />
+    <Content Include="FirstMasterPAge.Master" />
+    <Content Include="GlobalHealthNews.aspx" />
+    <Content Include="GlobalHealthNewsDetails.aspx" />
+    <Content Include="healthcarewebservices.aspx" />
+    <Content Include="HospitalStaffRequest.aspx" />
+    <Content Include="HospitalStaffRequestList.aspx" />
+    <Content Include="Images\01.jpg" />
+    <Content Include="Images\02.jpg" />
+    <Content Include="Images\03.jpg" />
+    <Content Include="Images\04.jpg" />
+    <Content Include="Images\04th_oct.jpg" />
+    <Content Include="Images\05.jpg" />
+    <Content Include="Images\06.jpg" />
+    <Content Include="Images\0710.jpg" />
+    <Content Include="Images\10th october.jpg" />
+    <Content Include="Images\1110.jpg" />
+    <Content Include="Images\1577644948596-PROGR_27.png" />
+    <Content Include="Images\1st october.jpg" />
+    <Content Include="Images\2.png" />
+    <Content Include="Images\21ST_09.jpg" />
+    <Content Include="Images\23rd_sepetmber.jpg" />
+    <Content Include="Images\24th_sep.jpg" />
+    <Content Include="Images\26th_sep.jpg" />
+    <Content Include="Images\28th_sept.jpg" />
+    <Content Include="Images\30th sept.jpg" />
+    <Content Include="Images\30th_sept.jpg" />
+    <Content Include="Images\5th_oct.jpg" />
+    <Content Include="Images\8th_oct.jpg" />
+    <Content Include="Images\8th_october.jpg" />
+    <Content Include="Images\9th oct.jpg" />
+    <Content Include="Images\9th october.jpg" />
+    <Content Include="Images\accent.png" />
+    <Content Include="Images\administration.jpg" />
+    <Content Include="Images\allhospitajobsavailableattabletjobs.jpg" />
+    <Content Include="Images\amritha-hospital.jpg" />
+    <Content Include="Images\apollohospitallogo.jpg" />
+    <Content Include="Images\Bahrain.png" />
+    <Content Include="Images\BewellHospitallogo.jpg" />
+    <Content Include="Images\Biomedical Engineer Job.jpg" />
+    <Content Include="Images\bullet.png" />
+    <Content Include="Images\Campus Pictures.jpg" />
+    <Content Include="Images\campus.jpg" />
+    <Content Include="Images\carehospitallogo.jpg" />
+    <Content Include="Images\cloudnindhospitallogo.jpg" />
+    <Content Include="Images\Cloudninehospitallogo.jpg" />
+    <Content Include="Images\ContinentalHospitalLogo.jpg" />
+    <Content Include="Images\continetalhospitallogo.jpg" />
+    <Content Include="Images\doctor1.jpg" />
+    <Content Include="Images\emaillogo.jpg" />
+    <Content Include="Images\favico3.ico" />
+    <Content Include="Images\favicon.ico" />
+    <Content Include="Images\favicon2.ico" />
+    <Content Include="Images\faviconjpg.jpg" />
+    <Content Include="Images\faviconsize.png" />
+    <Content Include="Images\fortishospitallogo.jpg" />
+    <Content Include="Images\Fridayimage.jpg" />
+    <Content Include="Images\FridayNewImage.jpg" />
+    <Content Include="Images\frontofficejob.png" />
+    <Content Include="Images\heroAccent.png" />
+    <Content Include="Images\homenursing.jpg" />
+    <Content Include="Images\Images9cdad4c45949d18dac69a772f7069569.jpg" />
+    <Content Include="Images\india.jpg" />
+    <Content Include="Images\jehangihospitallogo.jpg" />
+    <Content Include="Images\Jehangirhospitallogo.jpg" />
+    <Content Include="Images\jj8WNiSOwMd.png" />
+    <Content Include="Images\jpeg-optimizer_Red Circle Health Logo.jpg" />
+    <Content Include="Images\jpglogo1.jpg" />
+    <Content Include="Images\jpglogopng.png" />
+    <Content Include="Images\KamakshiHospital.jpg" />
+    <Content Include="Images\kaminenihospitallogo.jpg" />
+    <Content Include="Images\kimshospitallogo.jpg" />
+    <Content Include="Images\kumaranhospitallogo.jpg" />
+    <Content Include="Images\Kuwait.png" />
+    <Content Include="Images\logo png.png" />
+    <Content Include="Images\logo png1.png" />
+    <Content Include="Images\Logo1.jpg" />
+    <Content Include="Images\Logo2.jpg" />
+    <Content Include="Images\logo2.png" />
+    <Content Include="Images\LogoBeta.jpg" />
+    <Content Include="Images\maxhealthcarehospitallogo.jpg" />
+    <Content Include="Images\MaxHealthcareLogo.jpg" />
+    <Content Include="Images\MedantaHospitalLogo.jpg" />
+    <Content Include="Images\Medical Records Job.jpg" />
+    <Content Include="Images\MondayNewImage.jpg" />
+    <Content Include="Images\MondayNewImage1.jpg" />
+    <Content Include="Images\motherhoodhospitallogo.jpg" />
+    <Content Include="Images\NewFridayImage.jpg" />
+    <Content Include="Images\NewHomePageImage.jpg" />
+    <Content Include="Images\NewImage.jpg" />
+    <Content Include="Images\Newimage1.jpg" />
+    <Content Include="Images\Newimage2.jpg" />
+    <Content Include="Images\Newimage3.jpg" />
+    <Content Include="Images\NewImageFriday.jpg" />
+    <Content Include="Images\NewImageFriday1.jpg" />
+    <Content Include="Images\NewMondayImage.jpg" />
+    <Content Include="Images\NewSaturdayImage.jpg" />
+    <Content Include="Images\NewTuesdayImage.jpg" />
+    <Content Include="Images\NewTuesdayImage1.jpg" />
+    <Content Include="Images\NewWednesdayImage.jpg" />
+    <Content Include="Images\nurse.jpg" />
+    <Content Include="Images\nurse01.jpg" />
+    <Content Include="Images\nurse1.jpg" />
+    <Content Include="Images\nurse2.jpg" />
+    <Content Include="Images\nurse3.jpg" />
+    <Content Include="Images\nurses.jpg" />
+    <Content Include="Images\Nursing Freshers campus drive%40 banglore.jpg" />
+    <Content Include="Images\Nursing01.jpg" />
+    <Content Include="Images\Nursing02.jpg" />
+    <Content Include="Images\Oman.png" />
+    <Content Include="Images\OmegaHospitalImage.jpg" />
+    <Content Include="Images\OmegaHospitalLogo.jpg" />
+    <Content Include="Images\online inetreview.jpg" />
+    <Content Include="Images\online_inetreview.jpg" />
+    <Content Include="Images\orderedList0.png" />
+    <Content Include="Images\orderedList1.png" />
+    <Content Include="Images\orderedList2.png" />
+    <Content Include="Images\orderedList3.png" />
+    <Content Include="Images\orderedList4.png" />
+    <Content Include="Images\orderedList5.png" />
+    <Content Include="Images\orderedList6.png" />
+    <Content Include="Images\orderedList7.png" />
+    <Content Include="Images\orderedList8.png" />
+    <Content Include="Images\orderedList9.png" />
+    <Content Include="Images\paramedical.jpg" />
+    <Content Include="Images\Patient Care.jpg" />
+    <Content Include="Images\Pinterest-logo.png" />
+    <Content Include="Images\placements.jpg" />
+    <Content Include="Images\PNG tabletjobs.ico" />
+    <Content Include="Images\png-transparent-black-small-apple-logo-logo-material-apple-logo-black-thumbnail.png" />
+    <Content Include="Images\PNGtabletjobs.ico" />
+    <Content Include="Images\Post Job Now.jpg" />
+    <Content Include="Images\poster1.jpg" />
+    <Content Include="Images\Procurement-checklist.jpg" />
+    <Content Include="Images\Qatar.png" />
+    <Content Include="Images\RainbowChildren%27sHospital.jpg" />
+    <Content Include="Images\Rainbowchildrenshospitallogo.jpg" />
+    <Content Include="Images\Red tabletLogo0.jpg" />
+    <Content Include="Images\RedLogo.jpg" />
+    <Content Include="Images\Rednewlogo.jpg" />
+    <Content Include="Images\Redtab.jpg" />
+    <Content Include="Images\registration.jpeg" />
+    <Content Include="Images\registration.png" />
+    <Content Include="Images\registration.svg" />
+    <Content Include="Images\relievingletteroforiental.jpg" />
+    <Content Include="Images\revised.jpg" />
+    <Content Include="Images\SaturdayImage.jpg" />
+    <Content Include="Images\SaturdayImageNew.jpg" />
+    <Content Include="Images\SaturdayImageNew1.jpg" />
+    <Content Include="Images\SaturdayImageNew2.jpg" />
+    <Content Include="Images\SaturdayNewImage.jpg" />
+    <Content Include="Images\Saudi Arabia.png" />
+    <Content Include="Images\scanner_qr.jpg" />
+    <Content Include="Images\Sundayimage.jpg" />
+    <Content Include="Images\Supply Chain Job.jpg" />
+    <Content Include="Images\T.ico" />
+    <Content Include="Images\tablogo.png" />
+    <Content Include="Images\tb21.jpg" />
+    <Content Include="Images\ThinkstockPhotos.jpg" />
+    <Content Include="Images\Thursdayimage.jpg" />
+    <Content Include="Images\ThursdayNew.jpg" />
+    <Content Include="Images\tjc.png" />
+    <Content Include="Images\tjc1.png" />
+    <Content Include="Images\TJImage.jpg" />
+    <Content Include="Images\TJImageNew.jpg" />
+    <Content Include="Images\TJImageNew1.jpg" />
+    <Content Include="Images\today nursing job.jpg" />
+    <Content Include="Images\TodayImage.jpg" />
+    <Content Include="Images\TodayImage1.jpg" />
+    <Content Include="Images\TodayNewImage.jpg" />
+    <Content Include="Images\Top Management Job.jpg" />
+    <Content Include="Images\TuesdayImage.jpg" />
+    <Content Include="Images\TuesdayImage1.jpg" />
+    <Content Include="Images\TuesdayImage2.jpg" />
+    <Content Include="Images\TuesdayImageNew.jpg" />
+    <Content Include="Images\UAE.png" />
+    <Content Include="Images\VydehiHospitalLogo.jpg" />
+    <Content Include="Images\Ward Attendant.jpg" />
+    <Content Include="Images\website poster 2.jpg" />
+    <Content Include="Images\WEBSITE POSTER.jpg" />
+    <Content Include="Images\WEBSITE.jpg" />
+    <Content Include="Images\website1.jpg" />
+    <Content Include="Images\website2.jpg" />
+    <Content Include="Images\website3.jpg" />
+    <Content Include="Images\website4.jpg" />
+    <Content Include="Images\website5.jpg" />
+    <Content Include="Images\websiteimage.jpg" />
+    <Content Include="Images\websiteimage2.jpg" />
+    <Content Include="Images\websitephoto1.jpg" />
+    <Content Include="Images\website_cover.jpg" />
+    <Content Include="Images\Website_cover1.jpg" />
+    <Content Include="Images\WEBSITE_POSTER.jpg" />
+    <Content Include="Images\Web_Poster.jpg" />
+    <Content Include="Images\Wednesdayimage.jpg" />
+    <Content Include="Images\WednesdayImageNew.jpg" />
+    <Content Include="Images\WednesdayNewImage.jpg" />
+    <Content Include="Images\signature.jpeg" />
+    <Content Include="Images\WhatsApp07.jpg" />
+    <Content Include="Images\xyz1.jpg" />
+    <Content Include="Images\xyz10.jpg" />
+    <Content Include="Images\xyz11.jpg" />
+    <Content Include="Images\xyz12.jpg" />
+    <Content Include="Images\xyz2.jpg" />
+    <Content Include="Images\xyz3.jpg" />
+    <Content Include="Images\xyz4.jpg" />
+    <Content Include="Images\xyz5.jpg" />
+    <Content Include="Images\xyz6.jpg" />
+    <Content Include="Images\xyz7.jpg" />
+    <Content Include="Images\xyz8.jpg" />
+    <Content Include="Images\xyz9.jpg" />
+    <Content Include="Images\YashodaHospitalLogo.jpg" />
+    <Content Include="LoginForCandidateRegistratiom.aspx" />
+    <Content Include="LoginForGlobalHealthNews.aspx" />
+    <Content Include="ManageGlobalHealthNews.aspx" />
+    <Content Include="OnlineInterviewPaymentProceed.aspx" />
+    <Content Include="onlineinterviewresult.aspx" />
+    <Content Include="OnlineInterviewServiceWiseReport.aspx" />
+    <Content Include="PostHiringRequirement.aspx" />
+    <Content Include="SelectedCandidatePageV02.aspx" />
+    <Content Include="SelectedCandidatesDetails.aspx" />
+    <Content Include="ServiceInvoice.aspx" />
+    <Content Include="ServicePayment.aspx" />
+    <Content Include="ServicePaymentResult.aspx" />
+    <Content Include="tjtargets.aspx" />
+    <Content Include="tjtargetsreport.aspx" />
+    <Content Include="ViewAllHealthcareNews.aspx" />
+    <Content Include="ViewHiringRequirements.aspx" />
+    <Content Include="ViewOnlineInterviewCandidates.aspx" />
+    <Content Include="viewselectedcandidatesummaryV02.aspx" />
+    <Content Include="ViewZoomImagesV02.aspx" />
+    <Content Include="ZoomImagesV02.aspx" />
+    <Content Include="Handler5V02.ashx" />
+    <Content Include="Images\3.webp" />
+    <Content Include="account\AccountsMasterPAge.Master" />
+    <None Include="Properties\PublishProfiles\CustomProfile.pubxml" />
+    <None Include="Properties\PublishProfiles\FolderProfile.pubxml" />
+    <None Include="Properties\PublishProfiles\tabletjobs.com - Web Deploy.pubxml" />
+    <None Include="Properties\PublishProfiles\tabletjobs.com - Web Deploy1.pubxml" />
+    <None Include="Properties\PublishProfiles\tabletjobs.com - Web Deploy2.pubxml" />
+    <None Include="Properties\PublishProfiles\tjhrsolutions - FTP.pubxml" />
+    <None Include="Properties\PublishProfiles\tjhrsolutions - Web Deploy.pubxml" />
+    <None Include="Scripts\jquery-3.3.1.intellisense.js" />
+    <Content Include="index.html" />
+    <Content Include="ManageInterview.aspx" />
+    <Content Include="PostOnlineInterviewDetails.aspx" />
+    <Content Include="PrivacyPolicy.aspx" />
+    <Content Include="Scripts\bootstrap.js" />
+    <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="Scripts\jquery-3.3.1.js" />
+    <Content Include="Scripts\jquery-3.3.1.min.js" />
+    <Content Include="Scripts\jquery-3.3.1.slim.js" />
+    <Content Include="Scripts\jquery-3.3.1.slim.min.js" />
+    <Content Include="Scripts\modernizr-2.8.3.js" />
+    <Content Include="Scripts\WebForms\DetailsView.js" />
+    <Content Include="Scripts\WebForms\Focus.js" />
+    <Content Include="Scripts\WebForms\GridView.js" />
+    <Content Include="Scripts\WebForms\Menu.js" />
+    <Content Include="Scripts\WebForms\MenuStandards.js" />
+    <Content Include="Scripts\WebForms\MSAjax\MicrosoftAjax.js" />
+    <Content Include="Scripts\WebForms\MSAjax\MicrosoftAjaxApplicationServices.js" />
+    <Content Include="Scripts\WebForms\MSAjax\MicrosoftAjaxComponentModel.js" />
+    <Content Include="Scripts\WebForms\MSAjax\MicrosoftAjaxCore.js" />
+    <Content Include="Scripts\WebForms\MSAjax\MicrosoftAjaxGlobalization.js" />
+    <Content Include="Scripts\WebForms\MSAjax\MicrosoftAjaxHistory.js" />
+    <Content Include="Scripts\WebForms\MSAjax\MicrosoftAjaxNetwork.js" />
+    <Content Include="Scripts\WebForms\MSAjax\MicrosoftAjaxSerialization.js" />
+    <Content Include="Scripts\WebForms\MSAjax\MicrosoftAjaxTimer.js" />
+    <Content Include="Scripts\WebForms\MSAjax\MicrosoftAjaxWebForms.js" />
+    <Content Include="Scripts\WebForms\MSAjax\MicrosoftAjaxWebServices.js" />
+    <Content Include="Scripts\WebForms\SmartNav.js" />
+    <Content Include="Scripts\WebForms\TreeView.js" />
+    <Content Include="Scripts\WebForms\WebForms.js" />
+    <Content Include="Scripts\WebForms\WebParts.js" />
+    <Content Include="Scripts\WebForms\WebUIValidation.js" />
+    <Content Include="Site.Master" />
+    <Content Include="TermsAndConditionsV02.aspx" />
+    <Content Include="ViewInterview.aspx" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Bundle.config" />
+    <Content Include="OnlineInterviewJobs.aspx" />
+    <Content Include="OnlineInterviewApply.aspx" />
+    <Content Include="OnlineInterviewPayment.aspx" />
+    <Content Include="OnlineInterviewPaymentResult.aspx" />
+    <Content Include="OnlineInterviewInvoice.aspx" />
+    <Content Include="OnlineInterviewJobWiseReport.aspx" />
+    <Content Include="App_Data\OnlineInterviewSchema.sql" />
+    <Content Include="ZoomImageHandler.ashx" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="account\accountdashboard.aspx.cs">
+      <DependentUpon>accountdashboard.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="account\accountdashboard.aspx.designer.cs">
+      <DependentUpon>accountdashboard.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="account\accountdeliveryedit.aspx.cs">
+      <DependentUpon>accountdeliveryedit.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="account\accountdeliveryedit.aspx.designer.cs">
+      <DependentUpon>accountdeliveryedit.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="account\accountexpenses.aspx.cs">
+      <DependentUpon>accountexpenses.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="account\accountexpenses.aspx.designer.cs">
+      <DependentUpon>accountexpenses.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="account\accounthome.aspx.cs">
+      <DependentUpon>accounthome.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="account\accounthome.aspx.designer.cs">
+      <DependentUpon>accounthome.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="account\AccountLoginPage.aspx.cs">
+      <DependentUpon>AccountLoginPage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="account\AccountLoginPage.aspx.designer.cs">
+      <DependentUpon>AccountLoginPage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="account\accountreports.aspx.cs">
+      <DependentUpon>accountreports.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="account\accountreports.aspx.designer.cs">
+      <DependentUpon>accountreports.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="account\accountrevenue.aspx.cs">
+      <DependentUpon>accountrevenue.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="account\accountrevenue.aspx.designer.cs">
+      <DependentUpon>accountrevenue.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="account\accountsaddcustomers.aspx.cs">
+      <DependentUpon>accountsaddcustomers.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="account\accountsaddcustomers.aspx.designer.cs">
+      <DependentUpon>accountsaddcustomers.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="account\accountsbooking.aspx.cs">
+      <DependentUpon>accountsbooking.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="account\accountsbooking.aspx.designer.cs">
+      <DependentUpon>accountsbooking.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="account\accountslogout.aspx.cs">
+      <DependentUpon>accountslogout.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="account\accountslogout.aspx.designer.cs">
+      <DependentUpon>accountslogout.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="account\AccountsMasterPAge.Master.cs">
+      <DependentUpon>AccountsMasterPAge.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="account\AccountsMasterPAge.Master.designer.cs">
+      <DependentUpon>AccountsMasterPAge.Master</DependentUpon>
+    </Compile>
+    <Compile Include="account\accountsummary.aspx.cs">
+      <DependentUpon>accountsummary.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="account\accountsummary.aspx.designer.cs">
+      <DependentUpon>accountsummary.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="account\ExpensesReport.aspx.cs">
+      <DependentUpon>ExpensesReport.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="account\ExpensesReport.aspx.designer.cs">
+      <DependentUpon>ExpensesReport.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AddGlobalHealthNews.aspx.cs">
+      <DependentUpon>AddGlobalHealthNews.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AddGlobalHealthNews.aspx.designer.cs">
+      <DependentUpon>AddGlobalHealthNews.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="App_Start\BundleConfig.cs" />
+    <Compile Include="About.aspx.cs">
+      <DependentUpon>About.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="About.aspx.designer.cs">
+      <DependentUpon>About.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="CandidateEdit.aspx.cs">
+      <DependentUpon>CandidateEdit.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CandidateEdit.aspx.designer.cs">
+      <DependentUpon>CandidateEdit.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="CandidateList.aspx.cs">
+      <DependentUpon>CandidateList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CandidateList.aspx.designer.cs">
+      <DependentUpon>CandidateList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="CandidateRegistration.aspx.cs">
+      <DependentUpon>CandidateRegistration.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CandidateRegistration.aspx.designer.cs">
+      <DependentUpon>CandidateRegistration.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="CandidateRegistrationEditForm.aspx.cs">
+      <DependentUpon>CandidateRegistrationEditForm.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CandidateRegistrationEditForm.aspx.designer.cs">
+      <DependentUpon>CandidateRegistrationEditForm.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="CandidateRegistrationForm.aspx.cs">
+      <DependentUpon>CandidateRegistrationForm.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CandidateRegistrationForm.aspx.designer.cs">
+      <DependentUpon>CandidateRegistrationForm.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="CandidateRegistrationViewForm.aspx.cs">
+      <DependentUpon>CandidateRegistrationViewForm.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CandidateRegistrationViewForm.aspx.designer.cs">
+      <DependentUpon>CandidateRegistrationViewForm.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="CandidateView.aspx.cs">
+      <DependentUpon>CandidateView.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CandidateView.aspx.designer.cs">
+      <DependentUpon>CandidateView.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="CaregiverRegistration.aspx.cs">
+      <DependentUpon>CaregiverRegistration.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CaregiverRegistration.aspx.designer.cs">
+      <DependentUpon>CaregiverRegistration.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Contact.aspx.cs">
+      <DependentUpon>Contact.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Contact.aspx.designer.cs">
+      <DependentUpon>Contact.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ContactUs.aspx.cs">
+      <DependentUpon>ContactUs.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ContactUs.aspx.designer.cs">
+      <DependentUpon>ContactUs.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Default.aspx.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Default.aspx.designer.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Disclaimer.aspx.cs">
+      <DependentUpon>Disclaimer.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Disclaimer.aspx.designer.cs">
+      <DependentUpon>Disclaimer.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="EditGlobalHealthNews.aspx.cs">
+      <DependentUpon>EditGlobalHealthNews.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="EditGlobalHealthNews.aspx.designer.cs">
+      <DependentUpon>EditGlobalHealthNews.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="EditInterview.aspx.cs">
+      <DependentUpon>EditInterview.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="EditInterview.aspx.designer.cs">
+      <DependentUpon>EditInterview.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="FirstMasterPAge.Master.cs">
+      <DependentUpon>FirstMasterPAge.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="FirstMasterPAge.Master.designer.cs">
+      <DependentUpon>FirstMasterPAge.Master</DependentUpon>
+    </Compile>
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="GlobalHealthNews.aspx.cs">
+      <DependentUpon>GlobalHealthNews.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GlobalHealthNews.aspx.designer.cs">
+      <DependentUpon>GlobalHealthNews.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="GlobalHealthNewsDetails.aspx.cs">
+      <DependentUpon>GlobalHealthNewsDetails.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GlobalHealthNewsDetails.aspx.designer.cs">
+      <DependentUpon>GlobalHealthNewsDetails.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Handler5V02.ashx.cs">
+      <DependentUpon>Handler5V02.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="healthcarewebservices.aspx.cs">
+      <DependentUpon>healthcarewebservices.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="healthcarewebservices.aspx.designer.cs">
+      <DependentUpon>healthcarewebservices.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="HospitalStaffRequest.aspx.cs">
+      <DependentUpon>HospitalStaffRequest.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="HospitalStaffRequest.aspx.designer.cs">
+      <DependentUpon>HospitalStaffRequest.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="HospitalStaffRequestList.aspx.cs">
+      <DependentUpon>HospitalStaffRequestList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="HospitalStaffRequestList.aspx.designer.cs">
+      <DependentUpon>HospitalStaffRequestList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="LoginForCandidateRegistratiom.aspx.cs">
+      <DependentUpon>LoginForCandidateRegistratiom.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="LoginForCandidateRegistratiom.aspx.designer.cs">
+      <DependentUpon>LoginForCandidateRegistratiom.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="LoginForGlobalHealthNews.aspx.cs">
+      <DependentUpon>LoginForGlobalHealthNews.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="LoginForGlobalHealthNews.aspx.designer.cs">
+      <DependentUpon>LoginForGlobalHealthNews.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ManageGlobalHealthNews.aspx.cs">
+      <DependentUpon>ManageGlobalHealthNews.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ManageGlobalHealthNews.aspx.designer.cs">
+      <DependentUpon>ManageGlobalHealthNews.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ManageInterview.aspx.cs">
+      <DependentUpon>ManageInterview.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ManageInterview.aspx.designer.cs">
+      <DependentUpon>ManageInterview.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="OnlineInterviewPaymentProceed.aspx.cs">
+      <DependentUpon>OnlineInterviewPaymentProceed.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="OnlineInterviewPaymentProceed.aspx.designer.cs">
+      <DependentUpon>OnlineInterviewPaymentProceed.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="onlineinterviewresult.aspx.cs">
+      <DependentUpon>onlineinterviewresult.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="onlineinterviewresult.aspx.designer.cs">
+      <DependentUpon>onlineinterviewresult.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="OnlineInterviewServiceWiseReport.aspx.cs">
+      <DependentUpon>OnlineInterviewServiceWiseReport.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="OnlineInterviewServiceWiseReport.aspx.designer.cs">
+      <DependentUpon>OnlineInterviewServiceWiseReport.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PostHiringRequirement.aspx.cs">
+      <DependentUpon>PostHiringRequirement.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PostHiringRequirement.aspx.designer.cs">
+      <DependentUpon>PostHiringRequirement.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PostOnlineInterviewDetails.aspx.cs">
+      <DependentUpon>PostOnlineInterviewDetails.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PostOnlineInterviewDetails.aspx.designer.cs">
+      <DependentUpon>PostOnlineInterviewDetails.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PrivacyPolicy.aspx.cs">
+      <DependentUpon>PrivacyPolicy.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PrivacyPolicy.aspx.designer.cs">
+      <DependentUpon>PrivacyPolicy.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SelectedCandidatePageV02.aspx.cs">
+      <DependentUpon>SelectedCandidatePageV02.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SelectedCandidatePageV02.aspx.designer.cs">
+      <DependentUpon>SelectedCandidatePageV02.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="SelectedCandidatesDetails.aspx.cs">
+      <DependentUpon>SelectedCandidatesDetails.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SelectedCandidatesDetails.aspx.designer.cs">
+      <DependentUpon>SelectedCandidatesDetails.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ServiceInvoice.aspx.cs">
+      <DependentUpon>ServiceInvoice.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ServiceInvoice.aspx.designer.cs">
+      <DependentUpon>ServiceInvoice.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ServicePayment.aspx.cs">
+      <DependentUpon>ServicePayment.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ServicePayment.aspx.designer.cs">
+      <DependentUpon>ServicePayment.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ServicePaymentResult.aspx.cs">
+      <DependentUpon>ServicePaymentResult.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ServicePaymentResult.aspx.designer.cs">
+      <DependentUpon>ServicePaymentResult.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Site.Master.cs">
+      <DependentUpon>Site.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Site.Master.designer.cs">
+      <DependentUpon>Site.Master</DependentUpon>
+    </Compile>
+    <Compile Include="OnlineInterviewJobs.aspx.cs">
+      <DependentUpon>OnlineInterviewJobs.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="OnlineInterviewJobs.aspx.designer.cs">
+      <DependentUpon>OnlineInterviewJobs.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="OnlineInterviewApply.aspx.cs">
+      <DependentUpon>OnlineInterviewApply.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="OnlineInterviewApply.aspx.designer.cs">
+      <DependentUpon>OnlineInterviewApply.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="OnlineInterviewPayment.aspx.cs">
+      <DependentUpon>OnlineInterviewPayment.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="OnlineInterviewPayment.aspx.designer.cs">
+      <DependentUpon>OnlineInterviewPayment.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="OnlineInterviewPaymentResult.aspx.cs">
+      <DependentUpon>OnlineInterviewPaymentResult.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="OnlineInterviewPaymentResult.aspx.designer.cs">
+      <DependentUpon>OnlineInterviewPaymentResult.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="OnlineInterviewInvoice.aspx.cs">
+      <DependentUpon>OnlineInterviewInvoice.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="OnlineInterviewInvoice.aspx.designer.cs">
+      <DependentUpon>OnlineInterviewInvoice.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="OnlineInterviewJobWiseReport.aspx.cs">
+      <DependentUpon>OnlineInterviewJobWiseReport.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="OnlineInterviewJobWiseReport.aspx.designer.cs">
+      <DependentUpon>OnlineInterviewJobWiseReport.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PhonePeIntegration.cs" />
+    <Compile Include="TermsAndConditionsV02.aspx.cs">
+      <DependentUpon>TermsAndConditionsV02.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="TermsAndConditionsV02.aspx.designer.cs">
+      <DependentUpon>TermsAndConditionsV02.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="tjtargets.aspx.cs">
+      <DependentUpon>tjtargets.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="tjtargets.aspx.designer.cs">
+      <DependentUpon>tjtargets.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="tjtargetsreport.aspx.cs">
+      <DependentUpon>tjtargetsreport.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="tjtargetsreport.aspx.designer.cs">
+      <DependentUpon>tjtargetsreport.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ViewAllHealthcareNews.aspx.cs">
+      <DependentUpon>ViewAllHealthcareNews.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ViewAllHealthcareNews.aspx.designer.cs">
+      <DependentUpon>ViewAllHealthcareNews.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ViewHiringRequirements.aspx.cs">
+      <DependentUpon>ViewHiringRequirements.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ViewHiringRequirements.aspx.designer.cs">
+      <DependentUpon>ViewHiringRequirements.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ViewInterview.aspx.cs">
+      <DependentUpon>ViewInterview.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ViewInterview.aspx.designer.cs">
+      <DependentUpon>ViewInterview.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ViewOnlineInterviewCandidates.aspx.cs">
+      <DependentUpon>ViewOnlineInterviewCandidates.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ViewOnlineInterviewCandidates.aspx.designer.cs">
+      <DependentUpon>ViewOnlineInterviewCandidates.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="viewselectedcandidatesummaryV02.aspx.cs">
+      <DependentUpon>viewselectedcandidatesummaryV02.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="viewselectedcandidatesummaryV02.aspx.designer.cs">
+      <DependentUpon>viewselectedcandidatesummaryV02.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ViewZoomImagesV02.aspx.cs">
+      <DependentUpon>ViewZoomImagesV02.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ViewZoomImagesV02.aspx.designer.cs">
+      <DependentUpon>ViewZoomImagesV02.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ZoomImageHandler.ashx.cs">
+      <DependentUpon>ZoomImageHandler.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="ZoomImagesV02.aspx.cs">
+      <DependentUpon>ZoomImagesV02.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ZoomImagesV02.aspx.designer.cs">
+      <DependentUpon>ZoomImagesV02.aspx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <None Include="packages.config" />
+    <Content Include="Scripts\jquery-3.3.1.slim.min.map" />
+    <Content Include="Scripts\jquery-3.3.1.min.map" />
+    <None Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>58787</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:58787/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

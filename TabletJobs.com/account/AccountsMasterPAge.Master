@@ -1,0 +1,1195 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="AccountsMasterPAge.master.cs" Inherits="TabletJobs.com.account.AccountsMasterPAge" %>
+
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+     
+
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- ? SEO Meta Tags -->
+<meta name="description" content="Find top doctfor, nurse, technician, pharmacist, dietician, admin, HR, and front office jobs at hospitals across India and abroad with TabletJobs!" />
+<meta name="keywords" content="Doctor jobs in india, Nurse jobs, pharmacist, healthcar jobs, Pharmacist jobs,Hospital admin jobs,Hospital HR jobs,front office jobs,tabletjobs, Hospital jobs in India, Healthcare jobs abroad, Healthcare recruitment,hospital jobs in hyderabad,Medical job portal, intership, freelancer," />
+<meta name="author" content="TabletJobs.com" />
+
+<!-- ? Open Graph Meta Tags for Facebook, WhatsApp -->
+<meta property="og:title" content="TabletJobs - Healthcare Jobs Portal" />
+<meta property="og:description" content="Apply for trusted Doctor, Nurse, and Paramedical Jobs in India and Abroad with TabletJobs.com" />
+<meta property="og:image" content="https://tabletjobs.com/Images/tabletjobspreview.jpg" />
+<meta property="og:url" content="https://www.tjhrsolutions.com//" />
+<meta property="og:type" content="website" />
+
+<!-- ? Twitter Card Meta Tags -->
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="TabletJobs - Healthcare Jobs Portal" />
+<meta name="twitter:description" content="Apply for trusted Doctor, Nurse, and Paramedical Jobs in India and Abroad with TabletJobs.com" />
+<meta name="twitter:image" content="https://tabletjobs.com/Images/tabletjobspreview.jpg" />
+    <script async 
+src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7278420765762182"
+crossorigin="anonymous"></script>
+    <title>TabletJobs </title>
+
+    <!-- Bootstrap & FontAwesome -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+    <link href="Content/site.css" rel="stylesheet" />
+    <asp:ContentPlaceHolder ID="head" runat="server" />
+
+    <style>
+         .social-icons {
+        display: flex;
+        gap: 15px;
+        justify-content: flex-end; /* Align to right */
+       /*justify-content: flex-start; */
+        margin-right: -10px; /* Adjust as needed */
+    }
+
+    .social-icons a {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 30px;
+        height: 30px;
+        border-radius: 50%;
+        background-color: #333;
+        color: white;
+        font-size: 18px;
+        text-decoration: none;
+        transition: background-color 0.3s;
+    }
+
+    .social-icons a:hover {
+        background-color: #555;
+    }
+    .footer-links {
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.footer-links a {
+  color: #0077cc;
+  text-decoration: none;
+  margin: 0 8px;
+  font-weight: 500;
+}
+
+.footer-links a:hover {
+  text-decoration: underline;
+}
+    body {
+    margin-top: 0px; 
+    font-family: 'Inter', sans-serif;
+margin: 0;
+padding: 0;
+}
+ 
+    .nav-links {
+        display: flex;
+        gap: 25px;
+        align-items: center;
+    }
+    .nav-links a {
+        text-decoration: none;
+        color: #212529;
+        font-weight: 500;
+        font-size: 15px;
+        transition: color 0.2s;
+    }
+    .nav-links a:hover {
+        color: #1976D2;
+    }
+    .cta-button {
+        padding: 8px 16px;
+        background-color: #00B4D8;
+        color: white;
+        border-radius: 20px;
+        text-decoration: none;
+        font-weight: 600;
+    }
+    .cta-button:hover {
+        background-color: #0097A7;
+    }
+
+    @media (max-width: 768px) {
+        .nav-links {
+            flex-direction: column;
+            display: none;
+        }
+    }
+
+   .navbar {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+.navbar .nav-link {
+    transition: all 0.3s ease-in-out;
+    margin-left: 10px;
+}
+     footer {
+    background-color: #f5f5f5 !important;  /* Light gray background */
+    color: #000 !important;                /* Black text */
+    padding: 40px 0 20px 0;
+    font-size: 14px;
+      border-top: 1px dashed red;
+}
+
+  
+
+footer .container {
+    background-color: transparent !important; 
+    text-align: center !important;
+/* Transparent so footer takes full bg */
+}
+
+footer p,
+footer a,
+footer li,
+footer strong {
+    color: #000 !important;
+}
+
+.footer-title {
+    font-size: 16px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    color: #000 !important;
+}
+
+.footer-col {
+    margin-bottom: 30px;
+}
+
+.footer-section p, .footer-section a {
+    color: #000 !important;
+    text-decoration: none;
+    margin-bottom: 10px;
+    display: block;
+}
+
+.footer-section a:hover {
+    text-decoration: underline;
+    color: #0078d4 !important; /* Accent color on hover */
+}
+
+.footer-icons img {
+    width: 24px;
+    height: 24px;
+    margin-right: 10px;
+    vertical-align: middle;
+}
+
+.footer-bottom {
+    border-top: 1px solid #ccc;
+    margin-top: 20px;
+    padding-top: 15px;
+    text-align: center;
+    font-size: 13px;
+    color: #333 !important;
+}
+
+@media (min-width: 768px) {
+    footer {
+        margin-top: 0 !important;
+        padding-top: 30px; /* Adjust if needed */
+    }
+
+    footer .container {
+        margin-top: 0 !important;
+        padding-top: 0 !important;
+    }
+
+    .footer-col {
+        margin-top: 0 !important;
+    }
+}
+    .footer-section {
+        text-align: center;
+    }
+    .footer-icons {
+        justify-content: center;
+    }
+    .main-content {
+    margin-bottom: 0 !important;
+    padding-bottom: 0 !important;
+
+}
+
+            body {
+            margin: 0;
+            font-family: 'Segoe UI', sans-serif;
+            background-color: #f8f9fa;
+        }
+        
+        .social-icons a {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            background-color: white;
+            color: #003366;
+            margin-left: 10px;
+            font-size: 16px;
+            transition: background-color 0.3s, color 0.3s;
+        }
+        .social-icons a:hover {
+            background-color: #0078d4;
+            color: white;
+        }
+       
+        .navbar {
+    background-color: #f0f8ff;  /* Light grey */
+    border-bottom: 1px solid #dee2e6;
+}
+
+.navbar .nav-link {
+    color: #343a40 !important;  /* Darker text */
+    font-weight: 600;
+    font-size: 15px;
+    padding: 10px 15px;
+}
+
+.navbar .nav-link:hover {
+    color: #007BFF !important;  /* Soft blue */
+    text-decoration: underline;
+}
+
+        footer {
+            background-color: #eeeeee;
+            padding: 40px 0 20px;
+            font-size: 14px;
+            color: #222;
+        }
+        .footer-title {
+            font-size: 16px;
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+        .footer-section a {
+            color: #222;
+            text-decoration: none;
+            display: block;
+            margin-bottom: 8px;
+             text-align: center !important;
+        }
+        .footer-section a:hover {
+            color: #0078d4;
+            text-decoration: underline;
+        }
+        .footer-icons img {
+            width: 24px;
+            height: 24px;
+            margin-right: 10px;
+        }
+        .footer-bottom {
+            border-top: 1px solid #ccc;
+            padding-top: 15px;
+            text-align: center;
+            font-size: 13px;
+            color: #555;
+        }
+        @media (max-width: 768px) {
+            .top-bar, footer {
+                text-align: center;
+            }
+            .footer-section {
+                margin-top: 10px;
+            }
+        }
+       
+/* Social Media Icons Below Logo */
+        .social-media-header {
+            text-align: center;
+            padding: 10px 0;
+            background-color: #f8f9fa;
+            border-bottom: 2px solid #e9ecef;
+        }
+
+        .social-icons-header {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+
+        .social-icons-header a {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            color: white;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            font-size: 20px;
+        }
+
+        .social-icons-header a:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Social Media Colors */
+        .social-icons-header a.facebook { background-color: #1877f2; }
+        .social-icons-header a.instagram { background: linear-gradient(45deg, #405de6, #5851db, #833ab4, #c13584, #e1306c, #fd1d1d); }
+        .social-icons-header a.twitter { background-color: #1da1f2; }
+        .social-icons-header a.youtube { background-color: #ff0000; }
+        .social-icons-header a.telegram { background-color: #0088cc; }
+        .social-icons-header a.whatsapp { background-color: #25d366; }
+        .social-icons-header a.linkedin { background-color: #0077b5; }
+         .mobile-center-img {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        max-width: 100%;
+        height: auto;
+    }
+
+    @media (max-width: 768px) {
+        .mobile-center-img {
+            text-align: center;
+        }
+    }
+ .top-bar {
+            background-color: #f0f8ff; /* Light bluish for freshness */
+            padding: 12px 0;
+            text-align: center;
+            border-bottom: 1px solid #d0d0d0;
+        }
+
+        .top-bar-text {
+            font-weight: bold;
+            color: #2c3e50;
+        }
+
+        .top-bar-link {
+            background-color: #28a745; /* Soft green */
+            color: white;
+            padding: 8px 18px;
+            border-radius: 20px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 14px;
+            margin-left: 10px;
+            display: inline-block;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .top-bar-link:hover {
+            background-color: #218838;
+            transform: scale(1.05);
+        }
+
+/* Responsive tweak */
+@media (max-width: 768px) {
+    .top-bar-text {
+        text-align: center;
+        font-size: 15px;
+    }
+
+    .top-bar-link {
+        display: block;
+        margin: 10px auto 0 auto;
+        width: fit-content;
+    }
+}
+.text-container {
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+    text-align: center; /* Centers the text inside the container */
+    background-color:#1379BE;
+  }
+  .float-left {
+    margin-left: 30px; /* Adjust the value as needed */
+}
+
+  .floating-text {
+    position: relative;
+    animation: floatText 40s linear infinite;
+    color: white;
+  }
+
+.marquee {
+    width: 100%; /* Set the width to occupy only part of the screen */
+    margin: 0 auto; /* Center the marquee */
+    position: relative;
+    overflow: hidden; /* Hide the overflow */
+    white-space: nowrap;
+    display: flex;
+    align-items: center; /* Vertically center text */
+}
+</style>
+    <style>
+/* Additional CSS for better user controls styling */
+.navbar-text {
+    margin-bottom: 0;
+    font-size: 14px;
+}
+
+.btn-sm {
+    padding: 0.25rem 0.75rem;
+    font-size: 0.875rem;
+}
+
+/* Mobile responsive adjustments */
+@media (max-width: 768px) {
+    .navbar .d-flex.ms-auto {
+        margin-top: 10px;
+        justify-content: center;
+        width: 100%;
+    }
+    
+    .navbar .d-flex.align-items-center.gap-2 {
+        flex-direction: column;
+        gap: 8px !important;
+    }
+    
+    .navbar .d-flex.align-items-center.gap-2 .btn {
+        width: 120px;
+        text-align: center;
+    }
+}
+
+/* Hover effects for buttons */
+.btn-outline-primary:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 2px 4px rgba(0,123,255,0.3);
+}
+
+.btn-primary:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 2px 4px rgba(0,123,255,0.4);
+}
+
+.btn-outline-danger:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 2px 4px rgba(220,53,69,0.3);
+}
+/* ?? STOP ADS FROM GOING BELOW FOOTER (MOBILE FIX) */
+.ads-container {
+    min-height: 0px;   /* Reserve mobile ad space */
+    margin: 10px 0;
+    clear: both;
+}
+
+@media (min-width: 769px) {
+    .ads-container {
+        min-height: auto;
+    }
+}
+
+.ads-clear {
+    height: 10px;
+    clear: both;
+}
+
+/* AdSense: remove unwanted blank height */
+.ads-container{
+ margin: 10px 0;       /* thoda vertical space */
+    padding: 0;
+    text-align: center;   /* ad center align */
+    line-height: normal;  /* normal line-height */
+    font-size: 1rem;
+}
+
+/* Don't allow min-height from anywhere */
+.ads-container ins.adsbygoogle{
+ display: inline-block !important;
+    width: 100% !important;       /* full-width responsive ad */
+    height: auto !important;
+    max-height: 250px;
+}
+.whatsapp-float {
+    position: fixed;
+    bottom: 90px;      /* adjust if needed */
+    right: 20px;
+    width: 48px;
+    height: 48px;
+    z-index: 9999;
+}
+
+.whatsapp-float img {
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
+    transition: transform 0.2s ease;
+}
+
+.whatsapp-float img:hover {
+    transform: scale(1.1);
+}
+/* Mobile Fix */
+@media (max-width: 768px) {
+    .ads-container {
+        margin: 5px 0;
+    }
+
+    .ads-container ins.adsbygoogle {
+        max-height: 150px;
+    }
+}
+
+/* ================================
+   FOOTER
+================================ */
+/* ================================
+   FOOTER
+================================ */
+
+.site-footer {
+    width: 100%;
+    background: #102a43;
+    color: #d9e2ec;
+    margin: 40px 0 0 0;
+    padding: 45px 0 0 0;
+
+    /* Prevent Bootstrap/other CSS from shrinking footer */
+    display: block;
+    clear: both;
+}
+
+
+/* Main footer container */
+
+.footer-container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 25px;
+    box-sizing: border-box;
+}
+
+
+/* Three columns */
+
+.footer-row {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr;
+    gap: 60px;
+    align-items: start;
+}
+
+
+/* Columns */
+
+.footer-column {
+    min-width: 0;
+}
+
+
+/* Company */
+
+.footer-column h4 {
+    color: #000000;
+    font-size: 25px;
+    font-weight: 700;
+    margin: 0 0 8px 0;
+}
+
+.footer-column h5 {
+    color: #000000;
+    font-size: 17px;
+    font-weight: 700;
+    margin: 22px 0 12px 0;
+}
+
+.footer-tagline {
+    color: #4fd1c5;
+    font-size: 15px;
+    font-weight: 600;
+    line-height: 1.5;
+    margin: 0 0 8px 0;
+}
+
+.footer-owned {
+    color: #9fb3c8;
+    font-size: 14px;
+    line-height: 1.5;
+    margin: 0;
+    max-width: 350px;
+}
+
+
+/* Contact */
+
+.contact-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+
+    margin: 0 0 14px 0;
+
+    color: #d9e2ec;
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+.contact-icon {
+    flex: 0 0 20px;
+    font-size: 16px;
+}
+
+.contact-item a {
+    color: #d9e2ec;
+    text-decoration: none;
+}
+
+.contact-item a:hover {
+    color: #4fd1c5;
+    text-decoration: underline;
+}
+
+
+/* Quick links */
+
+.footer-title {
+    color: #ffffff !important;
+    font-size: 18px !important;
+    font-weight: 700 !important;
+    margin: 0 0 18px 0 !important;
+    padding-bottom: 10px;
+
+    border-bottom: 2px solid #4fd1c5;
+
+    display: inline-block;
+}
+
+
+.footer-menu {
+    list-style: none !important;
+    padding: 0 !important;
+    margin: 0 !important;
+}
+
+.footer-menu li {
+    margin: 0 0 11px 0;
+    padding: 0;
+}
+
+.footer-menu li::before {
+    content: none !important;
+}
+
+.footer-menu a {
+    color: #d9e2ec;
+    text-decoration: none;
+    font-size: 14px;
+    transition: all 0.2s ease;
+}
+
+.footer-menu a::before {
+    content: "›";
+    color: #4fd1c5;
+    font-size: 18px;
+    margin-right: 8px;
+}
+
+.footer-menu a:hover {
+    color: #4fd1c5;
+    padding-left: 4px;
+}
+
+
+/* Social */
+
+.social-description {
+    color: #9fb3c8;
+    font-size: 14px;
+    line-height: 1.6;
+    margin: 0 0 18px 0;
+    max-width: 280px;
+}
+
+
+/* Social icons */
+
+.footer-icons {
+    display: flex !important;
+    flex-direction: row !important;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 12px !important;
+    margin: 0 !important;
+    padding: 0 !important;
+}
+
+.footer-icons a {
+    width: 42px;
+    height: 42px;
+
+    padding: 0 !important;
+    margin: 0 !important;
+
+    background: #ffffff;
+
+    border-radius: 50%;
+
+    display: flex !important;
+    align-items: center;
+    justify-content: center;
+
+    text-decoration: none !important;
+
+    transition: all 0.25s ease;
+}
+
+.footer-icons a:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 5px 12px rgba(0,0,0,0.3);
+}
+
+.footer-icons img {
+    width: 23px !important;
+    height: 23px !important;
+
+    max-width: 23px !important;
+    max-height: 23px !important;
+
+    object-fit: contain;
+
+    margin: 0 !important;
+    padding: 0 !important;
+
+    display: block;
+}
+
+
+/* Disclaimer */
+
+.footer-disclaimer {
+    width: 100%;
+    border-top: 1px solid rgba(255,255,255,0.15);
+
+    margin-top: 35px;
+    padding: 20px 0 15px;
+
+    color: #9fb3c8;
+    font-size: 12px;
+    line-height: 1.6;
+}
+
+.footer-disclaimer p {
+    margin: 0 0 8px 0;
+}
+
+.footer-disclaimer strong {
+    color: #ffffff;
+}
+
+
+/* Copyright */
+
+.footer-copyright {
+    width: 100%;
+
+    border-top: 1px solid rgba(255,255,255,0.15);
+
+    padding: 15px 0;
+
+    text-align: center;
+
+    color: #9fb3c8;
+
+    font-size: 13px;
+}
+
+.footer-copyright strong {
+    color: #ffffff;
+}
+
+
+/* ================================
+   TABLET
+================================ */
+
+@media (max-width: 900px) {
+
+    .footer-row {
+        grid-template-columns: 1.5fr 1fr;
+        gap: 35px;
+    }
+
+    .footer-column:last-child {
+        grid-column: 1 / -1;
+    }
+
+}
+
+
+/* ================================
+   MOBILE
+================================ */
+
+@media (max-width: 600px) {
+
+    .site-footer {
+        padding-top: 30px;
+    }
+
+    .footer-container {
+        padding: 0 20px;
+    }
+
+    .footer-row {
+        display: flex;
+        flex-direction: column;
+        gap: 30px;
+    }
+
+    .footer-column {
+        width: 100%;
+    }
+
+    .footer-column h4 {
+        font-size: 23px;
+    }
+
+    .footer-disclaimer {
+        margin-top: 30px;
+    }
+
+    .footer-copyright {
+        text-align: center;
+    }
+
+
+.site-footer {
+    text-align: center !important;
+}
+
+.footer-container {
+    margin-left: auto !important;
+    margin-right: auto !important;
+    text-align: center !important;
+}
+
+.footer-row {
+    display: flex !important;
+    justify-content: center !important;
+    align-items: flex-start !important;
+    width: 100% !important;
+}
+
+.footer-column {
+    width: 100% !important;
+    max-width: 700px !important;
+    text-align: center !important;
+}
+
+.footer-column h4,
+.footer-column h5 {
+    text-align: center !important;
+}
+
+.contact-item {
+    justify-content: center !important;
+    text-align: center !important;
+}
+
+.contact-item > span:last-child {
+    text-align: center !important;
+}
+
+.footer-disclaimer {
+    text-align: center !important;
+}
+
+.footer-disclaimer p {
+    text-align: center !important;
+}
+
+.footer-copyright {
+    text-align: center !important;
+}
+}
+.site-footer {
+    text-align: center !important;
+}
+
+.site-footer .footer-row {
+    display: flex !important;
+    justify-content: center !important;
+    width: 100% !important;
+}
+
+.site-footer .footer-column {
+    width: 100% !important;
+    max-width: 700px !important;
+    margin: 0 auto !important;
+    text-align: center !important;
+}
+
+.site-footer .contact-item {
+    justify-content: center !important;
+}
+
+.site-footer .footer-disclaimer,
+.site-footer .footer-disclaimer p,
+.site-footer .footer-copyright {
+    text-align: center !important;
+}
+</style>
+    <asp:Literal ID="ogMetaTags" runat="server" />    <!-- Google Analytics (optimized single loader) -->
+    <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-ND2SDD4M9T"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-ND2SDD4M9T');
+</script>
+
+</head>
+<body>
+    <form id="form1" runat="server">
+                <img src="<%= ResolveUrl("~/Images/tb21.jpg") %>" alt="tablet" class="mobile-center-img" />
+        <div class="social-media-header">
+        <div class="social-icons-header">
+            <a href="https://www.facebook.com/TabletJobscom" target="_blank" class="facebook" title="Facebook">
+                <i class="fab fa-facebook-f"></i>
+            </a>
+            <a href="https://www.instagram.com/tabletjobscom" target="_blank" class="instagram" title="Instagram">
+                <i class="fab fa-instagram"></i>
+            </a>
+            <a href="https://x.com/TabletJobs" target="_blank" class="twitter" title="Twitter">
+                <i class="fab fa-twitter"></i>
+            </a>
+            <a href="https://www.linkedin.com/company/tabletjobs" target="_blank" class="linkedin" title="LinkedIn">
+    <i class="fab fa-linkedin-in"></i>
+</a>
+
+            <a href="https://t.me/tabletjobscom" target="_blank" class="telegram" title="Telegram">
+                <i class="fab fa-telegram-plane"></i>
+            </a>
+            <a href="https://whatsapp.com/channel/0029Vb3E6OrCxoAzeRfYc22I" target="_blank" class="whatsapp" title="WhatsApp Channel">
+                <i class="fab fa-whatsapp"></i>
+            </a>
+        </div>
+            
+    </div>
+ 
+
+
+     <!-- Wrap the section in a full-width flex container and center it -->
+<div class="container">
+    <div class="d-flex justify-content-center align-items-center py-2">
+        <asp:PlaceHolder ID="phLoggedIn" runat="server" Visible="false">
+            <div class="d-flex align-items-center">
+                <span class="navbar-text text-success me-3">
+                    <i class="fas fa-user-circle me-1"></i>
+                    Welcome, <asp:Label ID="lblUsername" runat="server" CssClass="fw-bold" />
+                </span>
+                <asp:LinkButton ID="lnkLogout" runat="server"
+                    CssClass="btn btn-outline-danger btn-sm"
+                    CausesValidation="false"
+                    OnClick="lnkLogout_ServerClick"
+                    ToolTip="Log out">
+                    <i class="fas fa-sign-out-alt me-1"></i> Logout
+                </asp:LinkButton>
+                 
+            </div>
+        </asp:PlaceHolder>
+
+        <asp:PlaceHolder ID="phAnonymous" runat="server" Visible="true">
+       
+        </asp:PlaceHolder>
+    </div>
+</div>
+
+   
+
+
+      
+<nav class="navbar navbar-expand-md navbar-light w-100">
+    <div class="container">
+        <button class="navbar-toggler ms-auto" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav me-auto">
+    <li class="nav-item">
+        <a class="nav-link" runat="server" href="~/account/accountdashboard.aspx">Home</a>
+    </li>
+
+                 <li class="nav-item">
+        <a class="nav-link" runat="server" href="~/account/accountrevenue.aspx">Daily Delivery Details</a>
+    </li>
+
+    <li class="nav-item">
+        <a class="nav-link" runat="server" href="~/account/accountsbooking.aspx">Daily Booking Details</a>
+    </li>
+
+    <li class="nav-item">
+        <a class="nav-link" runat="server" href="~/account/accountexpenses.aspx">Daily Expenses</a>
+    </li>
+                
+                 <li class="nav-item">
+        <a class="nav-link" runat="server" href="~/account/accountsaddcustomers.aspx">New Customer</a>
+    </li>
+                 <li class="nav-item">
+        <a class="nav-link" runat="server" href="~/account/accountreports.aspx">Reports</a>
+    </li>
+                   <li class="nav-item">
+        <a class="nav-link" runat="server" href="~/account/accountslogout.aspx">Logout</a>
+    </li>
+</ul>
+            
+           
+        </div>
+    </div>
+</nav>
+
+            
+
+
+        <!-- MAIN CONTENT -->
+        <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server" />
+        <div id="body">
+   
+    <asp:ContentPlaceHolder runat="server" ID="FeaturedContent" />
+    <section class="content-wrapper main-content clear-fix">
+        <asp:ContentPlaceHolder runat="server" ID="MainContent" />
+        <div style="margin:20px 0 0px 0; text-align:center;">
+  
+</div>
+    </section>
+              <%--   FOOTER AD START--%>
+
+    
+
+
+</div>
+   
+
+
+ <footer class="site-footer">
+
+    <div class="footer-container">
+
+        <div class="footer-row">
+
+            <!-- Company -->
+            <div class="footer-column company-column">
+
+                <h4>TabletJobs.com</h4>
+
+                
+
+                <h5>Contact Us</h5>
+
+                <p class="contact-item">
+                    <span class="contact-icon">📍</span>
+                    <span>
+                        #102, RV Residency,<br />
+                        Krishna Reddy Layout, GS Palya,<br />
+                        Electronic City, Bangalore – 560100
+                    </span>
+                </p>
+
+                <p class="contact-item">
+                    <span class="contact-icon">📞</span>
+                    
+                        <a href="tel:+918074660555">
+                            +91 8074660555
+                        </a>
+                        <br />
+                         
+                        <a href="tel:+917013107986">
+                            +91 7013107986
+                        </a>
+                   
+                </p>
+
+                <p class="contact-item">
+                    <span class="contact-icon">✉</span>
+                    <a href="ContactUs.aspx">
+                        Contact Us
+                    </a>
+                </p>
+                
+
+<h5>
+    <span class="contact-icon">🏢</span>
+    <a href="PostHiringRequirement.aspx"
+       style="color:steelblue; text-decoration:underline;">
+        Employers / Companies
+    </a>
+</h5>
+            </div>
+
+
+           
+
+        </div>
+        <br />
+
+        <!-- Disclaimer -->
+        <div class="footer-disclaimer">
+
+            <p>
+                <strong>Disclaimer:</strong>
+                This website is an independent job and career information
+                platform and is not affiliated with any government authority.
+            </p>
+
+            <p>
+                <strong>Affiliate Disclosure:</strong>
+                Some links on this website are affiliate links. As an Amazon
+                Associate, we earn from qualifying purchases at no additional
+                cost to you.
+            </p>
+
+        </div>
+
+
+        <!-- Copyright -->
+        <div class="footer-copyright">
+
+            Copyright © 2026
+            <strong>TabletJobs.com</strong>
+            All Rights Reserved.
+
+        </div>
+
+    </div>
+
+</footer>
+        <a href="https://wa.me/919059724821"
+   class="whatsapp-float"
+   target="_blank"
+   title="Chat on WhatsApp">
+    <img src="https://cdn-icons-png.flaticon.com/512/733/733585.png"
+         alt="WhatsApp Chat" />
+</a>
+
+        </form>
+    <!-- Include jQuery and Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+	<script>
+  window.addEventListener("load", function () {
+   setTimeout(function () {
+    document.querySelectorAll(".ads-container").forEach(function (wrap) {
+        const ins = wrap.querySelector("ins.adsbygoogle");
+        const hasIframe = ins && ins.querySelector("iframe");
+        if (!hasIframe) wrap.style.display = "none";
+    });
+}, 5000); // wait 5 seconds
+  });
+</script>
+
+   
+</body>
+</html>
+
+

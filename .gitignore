@@ -1,0 +1,21 @@
+# Visual Studio
+.vs/
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+
+# Build files
+[Bb]in/
+[Oo]bj/
+
+# NuGet packages
+packages/
+
+# Temporary files
+*.tmp
+*.log
+
+# Runtime data and uploaded files
+TabletJobs.com/App_Data/*
+TabletJobs.com/Uploads/*TabletJobs.com/Web.config
